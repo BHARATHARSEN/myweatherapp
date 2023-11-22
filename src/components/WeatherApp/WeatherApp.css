@@ -36,7 +36,7 @@
     color: white;
     border: none;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 25%;
     cursor: pointer;
     margin-left: 10px;
     font-size: 16px;
@@ -51,10 +51,6 @@
 
   }
 
-/* .data-container {
-    justify-content: center;
-    display :flex;
-} */
 
 .weather-temp{
     display:flex;
