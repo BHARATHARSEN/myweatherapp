@@ -15,7 +15,7 @@ import rain_icon from "../Assets/rain.png";
 const WeatherApp = () => {
 
   let apiKey = "dd1eca02a695669e2f9d4b38da63be67";
-  const[wicon, setWicon] = useState('cloud_icon')
+  const[wicon, setWicon] = useState(cloud_icon)
 
 
   const search = async () => {
@@ -26,11 +26,12 @@ const WeatherApp = () => {
       return 0;
     }
 
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${element[0].value},{GB}&limit={limit}&appid={dd1eca02a695669e2f9d4b38da63be67}`
+    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${element[0].value},GB&limit=1&appid=${apiKey}`;
+
 
     let response = await fetch(url);
 
-    let data = await response.json
+    let data = response.json();
 
     const humidity = document.getElementsByClassName("humidity-percent")
     const wind = document.getElementsByClassName("wind-speed")
@@ -83,7 +84,7 @@ const WeatherApp = () => {
       </div>
 
       <div className = "weather-image">
-        <img src = {setWicon}/>
+        <img src = {wicon}/>
       </div>
 
       <div className="weather-temp">63°c </div>
